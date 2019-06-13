@@ -4,9 +4,11 @@ import com.baeldung.persitence.model.Project;
 import com.baeldung.persitence.repository.IProjectRepository;
 import com.baeldung.service.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@Repository
 public class ProjectServiceImpl  implements IProjectService {
 
     @Autowired
