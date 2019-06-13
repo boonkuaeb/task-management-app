@@ -4,18 +4,12 @@ import com.baeldung.persitence.model.Project;
 import com.baeldung.persitence.repository.IProjectRepository;
 import com.baeldung.service.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
-public class ProjectServiceImpl  implements IProjectService {
-
+public class ProjectServiceImplFieldInjection implements IProjectService {
+    @Autowired
     private IProjectRepository projectRepo;
-
-    public ProjectServiceImpl(IProjectRepository projectRepo) {
-        this.projectRepo = projectRepo;
-    }
 
     @Override
     public Optional<Project> findById(Long id) {
@@ -26,4 +20,5 @@ public class ProjectServiceImpl  implements IProjectService {
     public Project save(Project project) {
         return projectRepo.save(project);
     }
+
 }
