@@ -4,11 +4,13 @@ import com.baeldung.persitence.model.Project;
 import com.baeldung.persitence.repository.IProjectRepository;
 import com.baeldung.service.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Optional;
 
 public class ProjectServiceImplFieldInjection implements IProjectService {
     @Autowired
+    @Qualifier("projectRepositoryImpl2")
     private IProjectRepository projectRepo;
 
     @Override

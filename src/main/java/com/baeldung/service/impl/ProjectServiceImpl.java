@@ -4,6 +4,7 @@ import com.baeldung.persitence.model.Project;
 import com.baeldung.persitence.repository.IProjectRepository;
 import com.baeldung.service.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -13,7 +14,7 @@ public class ProjectServiceImpl  implements IProjectService {
 
     private IProjectRepository projectRepo;
 
-    public ProjectServiceImpl(IProjectRepository projectRepo) {
+    public ProjectServiceImpl(@Qualifier("projectRepositoryImpl2") IProjectRepository projectRepo) {
         this.projectRepo = projectRepo;
     }
 
