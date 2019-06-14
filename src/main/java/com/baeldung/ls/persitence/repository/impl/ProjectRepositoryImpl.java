@@ -1,9 +1,8 @@
-package com.baeldung.persitence.repository.impl;
+package com.baeldung.ls.persitence.repository.impl;
 
-import com.baeldung.persitence.repository.IProjectRepository;
-import com.baeldung.persitence.model.Project;
+import com.baeldung.ls.persitence.model.Project;
+import com.baeldung.ls.persitence.repository.IProjectRepository;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     private String code;
 
     @Value("${project.suffix}")
-    private Integer suffix;
+    private String suffix;
 
     private List<Project> projects = new ArrayList<>();
 

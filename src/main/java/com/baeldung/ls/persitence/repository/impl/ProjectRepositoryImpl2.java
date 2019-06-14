@@ -1,7 +1,7 @@
-package com.baeldung.persitence.repository.impl;
+package com.baeldung.ls.persitence.repository.impl;
 
-import com.baeldung.persitence.repository.IProjectRepository;
-import com.baeldung.persitence.model.Project;
+import com.baeldung.ls.persitence.model.Project;
+import com.baeldung.ls.persitence.repository.IProjectRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

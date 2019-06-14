@@ -1,7 +1,7 @@
 package com.baeldung;
 
-import com.baeldung.persitence.model.Project;
-import com.baeldung.service.IProjectService;
+import com.baeldung.ls.persitence.model.Project;
+import com.baeldung.ls.service.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;

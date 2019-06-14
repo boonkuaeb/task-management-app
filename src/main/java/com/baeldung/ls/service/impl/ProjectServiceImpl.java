@@ -1,21 +1,20 @@
-package com.baeldung.service.impl;
+package com.baeldung.ls.service.impl;
 
-import com.baeldung.persitence.model.Project;
-import com.baeldung.persitence.repository.IProjectRepository;
-import com.baeldung.service.IProjectService;
+import com.baeldung.ls.persitence.model.Project;
+import com.baeldung.ls.persitence.repository.IProjectRepository;
+import com.baeldung.ls.service.IProjectService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Repository
+@Service
 public class ProjectServiceImpl  implements IProjectService {
 
     private final static Logger LOG = LoggerFactory.getLogger(ProjectServiceImpl.class);
-
 
     private IProjectRepository projectRepo;
 

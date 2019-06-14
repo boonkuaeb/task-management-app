@@ -1,4 +1,4 @@
-package com.baeldung.persitence.model;
+package com.baeldung.ls.persitence.model;
 
 import java.time.LocalDate;
 
