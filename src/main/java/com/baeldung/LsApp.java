@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
+import java.util.Optional;
 
 @SpringBootApplication
 public class LsApp {
@@ -23,6 +24,11 @@ public class LsApp {
 
     @PostConstruct
     public void postConstruct() {
-        projectService.save(new Project(1L, "My First Project", LocalDate.now()));
+        Project project = new Project(1L, "My First Project", LocalDate.now());
+        projectService.save(project);
+
+        Optional<Project> optionalProject = projectService.findById(1L);
+        optionalProject.ifPresent(System.out::println);
+
     }
 }
