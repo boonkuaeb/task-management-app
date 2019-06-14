@@ -11,11 +11,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-@Profile("dev")
 public class ProjectRepositoryImpl implements IProjectRepository {
 
     @Value("${project.prefix}")
     private String prefix;
+
+    @Value("${project.code}")
+    private String code;
 
     @Value("${project.suffix}")
     private Integer suffix;
@@ -44,6 +46,6 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     }
 
     private void updateInternalId(Project project) {
-        project.setInternalId(prefix + "-" + project.getId() + "-" + suffix);
+        project.setInternalId(prefix + "-code-"+ code +"-" + project.getId() + "-" + suffix);
     }
 }
