@@ -1,11 +1,9 @@
-package com.baeldung.ls.persitence.repository.impl;
+package com.baeldung.ls.persistence.repository.impl;
 
-import com.baeldung.ls.persitence.model.Project;
-import com.baeldung.ls.persitence.repository.IProjectRepository;
-import org.apache.commons.math3.random.RandomDataGenerator;
+import com.baeldung.ls.persistence.model.Project;
+import com.baeldung.ls.persistence.repository.IProjectRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
@@ -19,14 +17,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class ProjectRepositoryImplTest {
 
     @Autowired
-    @Qualifier("projectRepositoryImpl")
     private IProjectRepository projectRepository;
 
 
     @Test
     public void whenSavingNewProject_thenSuccess() {
         // Given
-        Project project = new Project(generateLong(), randomAlphabetic(6), LocalDate.now());
+        Project project = new Project(randomAlphabetic(6), LocalDate.now());
         // Then
         assertNotNull(projectRepository.save(project));
 
@@ -36,7 +33,7 @@ public class ProjectRepositoryImplTest {
     @Test
     public void givenProject_whenFindById_thenSuccess() {
         // Given
-        Project project = new Project(generateLong(), randomAlphabetic(6), LocalDate.now());
+        Project project = new Project( randomAlphabetic(6), LocalDate.now());
         Project newProject = projectRepository.save(project);
 
         // When
@@ -46,10 +43,4 @@ public class ProjectRepositoryImplTest {
         assertEquals(retreivedProject.get(), newProject);
     }
 
-    private long generateLong() {
-        long leftLimit = 10L;
-        long rightLimit = 100L;
-        long generatedLong = new RandomDataGenerator().nextLong(leftLimit, rightLimit);
-        return generatedLong;
-    }
 }

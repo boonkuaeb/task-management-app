@@ -1,6 +1,6 @@
 package com.baeldung;
 
-import com.baeldung.ls.persitence.model.Project;
+import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.service.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -24,7 +24,7 @@ public class LsApp {
 
     @PostConstruct
     public void postConstruct() {
-        Project project = new Project(1L, "My First Project", LocalDate.now());
+        Project project = new Project("My First Project", LocalDate.now());
         projectService.save(project);
 
         Optional<Project> optionalProject = projectService.findById(1L);
