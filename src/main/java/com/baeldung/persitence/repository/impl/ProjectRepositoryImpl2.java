@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public class ProjectRepositoryImpl2 implements IProjectRepository {
 
-    List<Project> projects = new ArrayList<>();
+    private List<Project> projects = new ArrayList<>();
 
     @Override
     public Optional<Project> findById(Long id) {

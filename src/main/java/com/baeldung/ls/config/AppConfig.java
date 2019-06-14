@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-
     @Bean
     public BeanA beanA(){
         return new BeanA();
@@ -15,5 +14,4 @@ public class AppConfig {
     public BeanB beanB(){
         return new BeanB();
     }
-
 }
