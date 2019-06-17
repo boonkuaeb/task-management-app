@@ -23,11 +23,11 @@ public class LsApp {
 
     @PostConstruct
     public void postConstruct() {
-        Project project = new Project("My First Project", LocalDate.now());
-        projectService.save(project);
-
-        Optional<Project> optionalProject = projectService.findById(1L);
-        optionalProject.ifPresent(System.out::println);
+//        Project project = new Project("My First Project", LocalDate.now());
+//        projectService.save(project);
+//
+//        Optional<Project> optionalProject = projectService.findById(1L);
+//        optionalProject.ifPresent(System.out::println);
 
     }
 }

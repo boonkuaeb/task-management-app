@@ -1,8 +1,7 @@
-package com.baeldung.ls.web.controller;
+package com.baeldung.ls.controller.rest;
 
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.service.IProjectService;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -10,12 +9,12 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping(value = "/projects")
-public class ProjectController {
+@RequestMapping(value = "/api/projects")
+public class ProjectRestController {
 
     private IProjectService projectService;
 
-    public ProjectController( IProjectService projectService) {
+    public ProjectRestController(IProjectService projectService) {
         this.projectService = projectService;
     }
 
