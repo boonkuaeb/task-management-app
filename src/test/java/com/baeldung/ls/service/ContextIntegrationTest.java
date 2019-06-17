@@ -21,4 +21,8 @@ public class ContextIntegrationTest {
         System.out.println();
     }
 
+    @Test
+    public void whenContextIsLoaded_thenNoExceptions() {
+
+    }
 }

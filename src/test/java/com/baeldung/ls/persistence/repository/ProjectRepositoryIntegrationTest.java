@@ -21,7 +21,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProjectRepositoryIntegrationTest {
 
     @Autowired
@@ -111,5 +111,12 @@ public class ProjectRepositoryIntegrationTest {
         Page<Project> retrievedProject = projectRepository.findAll(PageRequest.of(0, 2, Sort.by(Sort.Order.asc("name"))));
         assertThat(retrievedProject.getContent(), hasSize(2));
 
+    }
+
+
+    @Test
+    public void givenNewProject_thenSavedSuccess() {
+        Project newProject = new Project("First Project", LocalDate.now());
+        assertNotNull(projectRepository.save(newProject));
     }
 }

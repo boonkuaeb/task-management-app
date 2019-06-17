@@ -15,7 +15,6 @@ import java.util.Optional;
 public class LsApp {
 
     @Autowired
-    @Qualifier("projectServiceImpl")
     IProjectService projectService;
 
     public static void main(String[] args) {

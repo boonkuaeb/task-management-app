@@ -17,7 +17,6 @@ import static org.junit.Assert.assertThat;
 public class ProjectServiceIntegrationTest {
 
     @Autowired
-    @Qualifier(value = "projectServiceImpl")
     private IProjectService projectService;
 
     @Test
